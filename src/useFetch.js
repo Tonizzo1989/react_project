@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
-    const[Error, setError] = useState (null);
+    const[error, setError] = useState (null);
    
 
     useEffect(() => {
         setTimeout(() => {
         fetch(url)
-        .then(response =>{
+        .then(response => {
             console.log (response);
             if (!response.ok) {
                 throw Error ("Fetch non trovato!");
@@ -30,7 +30,7 @@ const useFetch = (url) => {
       }, 1000);
     }, [url]);
 
-    return{ data, isPending, Error }
+    return{ data, isPending, error }
     
 }
 
