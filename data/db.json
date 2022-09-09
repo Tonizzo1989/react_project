@@ -1,0 +1,17 @@
+{
+    "blogs": [
+    {
+        "title": "Il mio primo Blog!",
+        "body" : "lorem ipsum",
+        "author": "mario",
+        "id": 1
+    },
+    
+    { 
+        "title": "il mio secondo Blog!",
+        "body" : "lorem ipsum",
+        "author": "yoshi",
+        "id": 2
+    }
+  ]
+} 
