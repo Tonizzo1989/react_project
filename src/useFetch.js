@@ -8,13 +8,14 @@ const useFetch = (url) => {
    
 
     useEffect(() => {
+        const abortContr = new AbortController();
+        
         setTimeout(() => {
-        fetch(url)
+        fetch(url, { signal: AbortController.signal })
         .then(response => {
             console.log (response);
             if (!response.ok) {
                 throw Error ("Fetch non trovato!");
-    
             }
            return response.json();
         })
@@ -24,12 +25,20 @@ const useFetch = (url) => {
            setError(null);
        })
         .catch(error => {
-        setIsPending(false);
-        setError(error.message);
+            if (error.name === 'AbortError'){
+                console.log ("fetch aborted");
+            } else {
+                setIsPending(false);
+                setError(error.message);
+            }
+        
        })
       }, 1000);
-    }, [url]);
 
+      return () => abortContr.abort();
+    
+    }, [url]);
+    
     return{ data, isPending, error }
     
 }
