@@ -1,17 +1,16 @@
 {
-    "blogs": [
+  "blogs": [
     {
-        "title": "Il mio primo Blog!",
-        "body" : "lorem ipsum",
-        "author": "mario",
-        "id": 1
+      "title": "Il mio primo blog",
+      "body": "Impariamo insieme react",
+      "author": "yoshi",
+      "id": 1
     },
-    
-    { 
-        "title": "il mio secondo Blog!",
-        "body" : "lorem ipsum",
-        "author": "yoshi",
-        "id": 2
+    {
+      "title": "Il mio secondo blog",
+      "body": "Continuiamo a studiare",
+      "author": "mario",
+      "id": 2
     }
   ]
-} 
+}
